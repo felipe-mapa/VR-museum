@@ -16,7 +16,7 @@
 // </copyright>
 //-----------------------------------------------------------------------
 
-namespace GoogleVR.HelloVR
+namespace GoogleVR.VRroom
 {
     using UnityEngine;
     using UnityEngine.EventSystems;
