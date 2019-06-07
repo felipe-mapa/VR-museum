@@ -46,7 +46,8 @@ public class TeleEquip : MonoBehaviour
     }
     public void TeleOff()
     {
-        teleStatus = false;
+        teleTimer = 0;
         img.fillAmount = 0;
+        teleStatus = false;
     }
 }
