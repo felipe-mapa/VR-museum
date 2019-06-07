@@ -807,7 +807,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_Sprite: {fileID: 21300000, guid: 8094468b5f16dba4cb54cc8ee7203768, type: 3}
   m_Type: 3
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 0
@@ -2376,7 +2376,7 @@ GameObject:
   - component: {fileID: 1452038245}
   m_Layer: 0
   m_Name: TeleCube (3)
-  m_TagString: teleport
+  m_TagString: walkObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

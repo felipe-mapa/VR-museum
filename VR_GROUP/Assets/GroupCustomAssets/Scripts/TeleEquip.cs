@@ -32,6 +32,12 @@ public class TeleEquip : MonoBehaviour
                 _hit.transform.gameObject.GetComponent<MovementController>().TeleportPlayer();
                 teleTimer = 0;
             }
+
+            if (_hit.transform.CompareTag("walkObject")) 
+            {
+                img.fillAmount = 0;
+                _hit.transform.gameObject.GetComponent<MovementController>().WalkPlayer();
+            }
         }
     }
     public void TeleOn()
