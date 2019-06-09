@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Felipe-custom.unity
+    guid: e0a686f3f2bee3e4ead75693cb9d5186
   m_configObjects: {}
