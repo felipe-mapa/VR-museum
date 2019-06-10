@@ -6,6 +6,7 @@ TagManager:
   tags:
   - teleport
   - walkObject
+  - Elevator
   layers:
   - Default
   - TransparentFX
