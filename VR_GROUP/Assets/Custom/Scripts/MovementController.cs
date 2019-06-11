@@ -7,8 +7,12 @@ using UnityEngine;
 public class MovementController : MonoBehaviour
 {
     public GameObject player, elevatorExit;
+    
     AudioClip footsteps;
+    Camera cam;
     private float speed = 3.0f;
+
+    public void Awake() => cam = Camera.main;
 
     public void TeleportPlayer(){
         player.transform.position = new Vector3(transform.position.x, transform.position.y + 3.5f, transform.position.z);
@@ -19,7 +23,7 @@ public class MovementController : MonoBehaviour
     }
 
     public void WalkPlayer(){
-        Vector3 forward = Camera.main.transform.TransformDirection(Vector3.forward);
+        Vector3 forward = cam.transform.TransformDirection(Vector3.forward);
         player.transform.position = player.transform.position + forward * Time.deltaTime * 1.5f;
     }
 }
