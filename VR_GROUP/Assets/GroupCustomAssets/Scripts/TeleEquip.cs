@@ -43,7 +43,7 @@ public class TeleEquip : MonoBehaviour
             if (_hit.transform.CompareTag("walkObject") && Vector3.Distance(transform.position, _hit.transform.position) > minWalkDistance)
             {
                 img.fillAmount = 0;  
-                Debug.Log(minWalkDistance);
+                // Debug.Log(minWalkDistance);
                 _hit.transform.gameObject.GetComponent<MovementController>().WalkPlayer();
             }
 
