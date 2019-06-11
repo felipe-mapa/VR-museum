@@ -48,7 +48,8 @@ public class TeleEquip : MonoBehaviour
             }
 
             if (img.fillAmount == 1 && _hit.transform.CompareTag("Elevator")&& Vector3.Distance(transform.position, _hit.transform.position) < elevateReady) {
-                _hit.transform.gameObject.GetComponent<MovementController>().ElevatorTeleport();
+                _hit.transform.gameObject.GetComponent<MovementController>()?.ElevatorTeleport();
+                img.fillAmount = 0;
             }
         }
     }
