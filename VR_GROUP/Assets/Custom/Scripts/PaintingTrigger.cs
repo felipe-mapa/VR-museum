@@ -11,12 +11,14 @@ namespace GoogleVR.HelloVR
         // VARIABLES FOR PAINTING 
         private TextMeshPro paintingName;
         private AudioSource audioClass;
+        private AudioSource[] allAudioSources;
+        
         void Start()
         {
             paintingName = this.GetComponentInChildren<TextMeshPro>();
             audioClass = this.GetComponentInChildren<AudioSource>();
             IsFocused(false);
-        }
+        } 
 
         public void IsFocused(bool focused)
         {
@@ -29,8 +31,15 @@ namespace GoogleVR.HelloVR
             return;
         }
 
+        void StopAllAudio() {
+            allAudioSources = FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
+            foreach( AudioSource audioS in allAudioSources) {
+                audioS.Stop();
+            }
+        }
         public void PlayAudio()
         {
+            StopAllAudio();
             audioClass.Play(0);
             Debug.Log("started");
         }
