@@ -15,7 +15,7 @@ public class MovementController : MonoBehaviour
     public void Awake() => cam = Camera.main;
 
     public void TeleportPlayer(){
-        player.transform.position = new Vector3(transform.position.x, transform.position.y + 3.5f, transform.position.z);
+        player.transform.position = new Vector3(transform.position.x, transform.position.y + 3.5f, transform.position.z - 0.75f);
     }
 
     public void ElevatorTeleport(){

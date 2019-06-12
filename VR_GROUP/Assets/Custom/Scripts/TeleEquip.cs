@@ -14,8 +14,6 @@ public class TeleEquip : MonoBehaviour
     float teleTimer;
     public int rayDistance = 20;
     Camera camera;
-
-
     Ray ray;
     private void Awake() {
         camera = Camera.main;
@@ -29,7 +27,6 @@ public class TeleEquip : MonoBehaviour
         }
         RayCastToFindMovement();
     }
-
     private void RayCastToFindMovement()
     {
         ray = camera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
@@ -49,7 +46,7 @@ public class TeleEquip : MonoBehaviour
             }
 
             if (img.fillAmount == 1 && _hit.transform.CompareTag("Elevator")&& Vector3.Distance(transform.position, _hit.transform.position) < elevateReady) {
-                _hit.transform.gameObject.GetComponent<MovementController>().ElevatorTeleport();
+                _hit.transform.gameObject.GetComponent<MovementController>()?.ElevatorTeleport();
                 img.fillAmount = 0;
             }
         }
