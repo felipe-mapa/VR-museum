@@ -24,6 +24,6 @@ public class MovementController : MonoBehaviour
 
     public void WalkPlayer(){
         Vector3 forward = cam.transform.TransformDirection(Vector3.forward);
-        player.transform.position = player.transform.position + forward * Time.deltaTime * 1.5f;
+        player.transform.position = player.transform.position + forward * Time.deltaTime * 2f;
     }
 }
