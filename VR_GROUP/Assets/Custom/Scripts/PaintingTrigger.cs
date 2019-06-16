@@ -15,6 +15,7 @@ namespace GoogleVR.HelloVR
         
         void Start()
         {
+            allAudioSources = FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
             paintingName = this.GetComponentInChildren<TextMeshPro>();
             audioClass = this.GetComponentInChildren<AudioSource>();
             IsFocused(false);
@@ -32,7 +33,6 @@ namespace GoogleVR.HelloVR
         }
 
         void StopAllAudio() {
-            allAudioSources = FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
             foreach( AudioSource audioS in allAudioSources) {
                 audioS.Stop();
             }

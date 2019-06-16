@@ -4,15 +4,16 @@ using UnityEngine;
 
 
 [RequireComponent(typeof(Collider))]
-public class MovementController : MonoBehaviour
-{
+public class MovementController : MonoBehaviour {
     public GameObject player, elevatorExit;
     
     AudioClip footsteps;
     Camera cam;
-    private float speed = 3.0f;
+    // private float speed = 3.0f;
 
-    public void Awake() => cam = Camera.main;
+    public void Awake() {
+        cam = Camera.main;
+    } 
 
     public void TeleportPlayer(){
         player.transform.position = new Vector3(transform.position.x, transform.position.y + 3.5f, transform.position.z - 0.75f);
