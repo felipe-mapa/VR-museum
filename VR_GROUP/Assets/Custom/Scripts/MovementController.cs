@@ -6,6 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class MovementController : MonoBehaviour {
     public GameObject player, elevatorExit;
+    public bool isExiting = false;
     
     AudioClip footsteps;
     Camera cam;

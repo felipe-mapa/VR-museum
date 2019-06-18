@@ -23,7 +23,7 @@ namespace GoogleVR.HelloVR
 
         public void IsFocused(bool focused)
         {
-            Debug.Log("idFocused: " + focused);
+            //Debug.Log("idFocused: " + focused);
             paintingName.enabled = focused;
             if (!focused)
             {
