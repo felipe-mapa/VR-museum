@@ -25,7 +25,14 @@ public class TeleEquip : MonoBehaviour {
             img.fillAmount = teleTimer / totalTime;
         }
 
-        RayCastToFindMovement();
+        if (img.fillAmount == 1 
+        &&  currentMovementController.isExiting) {
+            teleTimer = 0;
+            Debug.Log("is exiting");
+            Application.Quit();
+        } else {
+            RayCastToFindMovement();
+        }
     }
 
     private void RayCastToFindMovement() {
