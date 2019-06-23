@@ -28,7 +28,7 @@ public class TeleEquip : MonoBehaviour {
         if (img.fillAmount == 1 
         &&  currentMovementController.isExiting) {
             teleTimer = 0;
-            Debug.Log("is exiting");
+            // Debug.Log("is exiting");
             Application.Quit();
         } else {
             RayCastToFindMovement();
@@ -70,6 +70,8 @@ public class TeleEquip : MonoBehaviour {
             &&  img.fillAmount == 1
             &&  Vector3.Distance(transform.position, _hit.transform.position) < elevateReady
             ) {
+                
+                Debug.Log("Elevator");
                 currentMovementController?.ElevatorTeleport();
                 img.fillAmount = 0;
             }
