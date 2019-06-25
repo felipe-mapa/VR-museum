@@ -6,6 +6,7 @@ public class TeleEquip : MonoBehaviour {
     public float totalTime = 2;
     public float minWalkDistance = 5f;
     public int rayDistance = 20;
+    public Light _spotLight;
     
     private RaycastHit _hit;
     private float elevateReady = 8f;
@@ -13,10 +14,14 @@ public class TeleEquip : MonoBehaviour {
     private float teleTimer;
     private Camera mainCamera;
     private Ray ray;
+    private float offIntensity = 0.00f;
     private MovementController currentMovementController;
+    private float onIntensity = 3.00f;
 
     private void Awake() {
+        _spotLight.GetComponentInChildren<Light>();
         mainCamera = Camera.main;
+        _spotLight.intensity = offIntensity;
     }
 
     private void Update() {
@@ -39,6 +44,7 @@ public class TeleEquip : MonoBehaviour {
         ray = mainCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
 
         if (Physics.Raycast(ray, out _hit, rayDistance)) {
+           
             if (!_hit.transform.CompareTag("teleport") && !_hit.transform.CompareTag("Elevator") && !_hit.transform.CompareTag("walkObject")) {
                 currentMovementController = null;
                 return;
@@ -70,11 +76,19 @@ public class TeleEquip : MonoBehaviour {
             &&  img.fillAmount == 1
             &&  Vector3.Distance(transform.position, _hit.transform.position) < elevateReady
             ) {
-                
                 Debug.Log("Elevator");
                 currentMovementController?.ElevatorTeleport();
                 img.fillAmount = 0;
             }
+            
+            if (_hit.transform.CompareTag("Elevator") && img.fillAmount < 1){
+                 _spotLight.intensity = onIntensity;
+            } else
+            {
+                 _spotLight.intensity = offIntensity;
+            }
+
+         
         }
     }
 
